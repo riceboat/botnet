@@ -8,6 +8,12 @@ def command(s,cmd):
  print("Excecuting>>> "+cmd)
  s.sendline(cmd)
 prefix=str(raw_input("Please enter the first three letters of your ip address or press enter for last used: "))
+comd=str(raw_input("Please enter the command(s) you want to run: "))
+out=str(raw_input("Display command output? y/n: "))
+if out=="y":
+ output=True
+else:
+ output=False
 if prefix=="":
  f=open("lastused.txt","r")
  prefix=f.readline().strip()
@@ -28,9 +34,10 @@ for ip in suffixes:
     s.force_password=True
     s.login(ip,"root","raspberry",port=cport)
     print("Logged in to "+ip+"                 *")
-    command(s,"pkill sshd")
+    command(s,comd)
     s.prompt()
+    if out:
+     print(s.before)
     s.logout()
  except:
   print("Host is down^")
-

@@ -1,5 +1,5 @@
-sudo apt-get update -y
-sudo apt-get install python-pip -y
-sudo apt-get upgrade -y
-pip install pexpect 
-pip install python-nmap
+apt-get update -y
+apt-get install python-pip -y
+apt-get upgrade -y
+pip2 install pexpect 
+pip2 install python-nmap

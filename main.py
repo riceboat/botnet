@@ -77,6 +77,7 @@ def sendall(bots,cmd,out=True):
 
 def connect(ips,uname,pwd):
  bots=[]
+ print("User account > ")
  for ip in ips:
   tmp=bot(ip,uname,pwd)
   if tmp.spawn()==True:
